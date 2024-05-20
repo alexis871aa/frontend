@@ -1,20 +1,22 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const ButtonContainer = ({ className, children }) => (
-	<Link className={className} to="/login">
+const ButtonContainer = ({ children, className, width, ...props }) => (
+	<button className={className} {...props}>
 		{children}
-	</Link>
+	</button>
 );
 
 export const Button = styled(ButtonContainer)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #eee;
-	border: 1px solid #000;
-	font-size: ${({ size = '18px' }) => size};
-	margin: ${({ margin = '0' }) => margin};
-	width: ${({ width = '100px' }) => width};
-	height: ${({ height = '32px' }) => height};
+	font-size: 18px;
+	height: 32px;
+	width: ${({ width = '100%' }) => width};
+	border: 1px solid rgb(0, 0, 0);
+	background-color: rgb(238, 238, 238);
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
