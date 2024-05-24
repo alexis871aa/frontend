@@ -8,18 +8,18 @@
       "role_id": 0
     },
     {
-      "login": "ivan",
-      "password": "qwerty123",
-      "register_at": "2049-11-11 09:47",
-      "role_id": 2,
-      "id": "uCTSHBN"
+      "login": "alex",
+      "password": "qwerty",
+      "register_at": "2064-08-27 21:58",
+      "role_id": 1,
+      "id": "tTR4F3b"
     },
     {
-      "login": "ivan2",
-      "password": "qwerty1234",
-      "register_at": "2043-09-26 11:48",
-      "role_id": 2,
-      "id": "44Jtnj6"
+      "login": "ivan",
+      "password": "qwerty123",
+      "register_at": "2059-11-13 09:56",
+      "role_id": 1,
+      "id": "NvrQQTb"
     }
   ],
   "roles": [
