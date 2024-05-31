@@ -15,7 +15,12 @@ const FooterContainer = ({ className }) => {
 				setCity(name);
 				setTemperature(Math.round(main.temp));
 				setWeather(weather.at(0).description);
-			});
+			})
+			.catch(() =>
+				console.error(
+					'Не удалось получить данные о погоде, повторите запрос позже',
+				),
+			);
 	}, []);
 
 	return (
