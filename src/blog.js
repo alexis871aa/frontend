@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { Authorization, Registration, Users, Post } from './pages';
-import { Footer, Header } from './components';
+import { Footer, Header, Modal } from './components';
 import { setUser } from './action';
 import styled from 'styled-components';
 
@@ -55,6 +55,7 @@ export const Blog = () => {
 				</Routes>
 			</Page>
 			<Footer />
+			<Modal />
 		</AppColumn>
 	);
 };
