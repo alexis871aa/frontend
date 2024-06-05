@@ -1,4 +1,4 @@
-import { getComments, getPost, getUsers, updatePost } from '../api';
+import { addPost, getComments, getPost, getUsers, updatePost } from '../api';
 import { sessions } from '../sessions';
 import { ROLE } from '../constants';
 
@@ -14,11 +14,14 @@ export const savePost = async (hash, newPostData) => {
 		};
 	}
 
-	await updatePost(newPostData);
+	const postData =
+		newPostData.id === ''
+			? await addPost(newPostData)
+			: await updatePost(newPostData);
 
-	const post = await getPost(newPostData.id);
+	const post = await getPost(postData.id);
 
-	const comments = await getComments(newPostData.id);
+	const comments = await getComments(postData.id);
 
 	const users = await getUsers();
 

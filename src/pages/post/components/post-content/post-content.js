@@ -14,13 +14,13 @@ const PostContentContainer = ({
 			<img src={imageUrl} alt={title} />
 			<H2>{title}</H2>
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
 				margin="-10px 0 20px"
 				editButton={
 					<Icon
 						id="fa-pencil-square-o"
 						size="21px"
-						margin="0 10px 0 0"
 						onClick={() => {
 							navigate(`/post/${id}/edit`);
 						}}

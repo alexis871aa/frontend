@@ -32,7 +32,7 @@ const PostFormContainer = ({
 			content: newContent,
 		};
 
-		dispatch(savePostAsync(requestServer, newPostData)).then(() =>
+		dispatch(savePostAsync(requestServer, newPostData)).then(({ id }) =>
 			navigate(`/post/${id}`),
 		);
 	};
@@ -42,16 +42,10 @@ const PostFormContainer = ({
 			<Input ref={imageRef} defaultValue={imageUrl} placeholder="Изображение..." />
 			<Input ref={titleRef} defaultValue={title} placeholder="Заголовок" />
 			<SpecialPanel
+				id={id}
 				publishedAt={publishedAt}
 				margin="20px 0"
-				editButton={
-					<Icon
-						id="fa-floppy-o"
-						size="21px"
-						margin="0 10px 0 0"
-						onClick={onSave}
-					/>
-				}
+				editButton={<Icon id="fa-floppy-o" size="21px" onClick={onSave} />}
 			/>
 			<div
 				ref={contentRef}
@@ -72,6 +66,8 @@ export const PostForm = styled(PostFormContainer)`
 	}
 
 	& .post-text {
+		min-height: 80px;
+		border: 1px solid #000;
 		font-size: 18px;
 		white-space: pre-line;
 	}
