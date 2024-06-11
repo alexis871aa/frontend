@@ -11,12 +11,12 @@ export const Button = styled(ButtonContainer)`
 	justify-content: center;
 	align-items: center;
 	font-size: 18px;
-	height: 32px;
+	height: ${({ height = '32px' }) => height};
 	width: ${({ width = '100%' }) => width};
 	border: 1px solid rgb(0, 0, 0);
 	background-color: rgb(238, 238, 238);
 
 	&:hover {
-		cursor: pointer;
+		cursor: ${({ disabled }) => (disabled ? 'default' : 'pointer')};
 	}
 `;
