@@ -29,4 +29,6 @@ export const Header = styled(HeaderContainer)`
 	padding: 20px 40px;
 	background-color: #fff;
 	box-shadow: 0 -2px 17px #000;
+
+	z-index: 10; // сделал для того, чтобы поиск уходил при скроллинге
 `;
