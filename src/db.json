@@ -3,20 +3,20 @@
     {
       "id": "001",
       "login": "anton",
-      "password": "qwerty123",
+      "password": "qwe123",
       "register_at": "2050-09-22",
       "role_id": 0
     },
     {
       "login": "alex",
-      "password": "qwerty",
+      "password": "qwe123",
       "register_at": "2064-08-27 21:58",
       "role_id": 1,
       "id": "tTR4F3b"
     },
     {
       "login": "ivan",
-      "password": "qwerty123",
+      "password": "qwe123",
       "register_at": "2059-11-13 09:56",
       "role_id": 1,
       "id": "NvrQQTb"
@@ -289,61 +289,5 @@
       "id": 14
     }
   ],
-  "sessions": [
-    {
-      "hash": "0.70759300714650663621796411462128162384033203125000",
-      "user": {
-        "id": "001",
-        "login": "anton",
-        "password": "qwerty123",
-        "registerAt": "2050-09-22",
-        "roleId": 0
-      },
-      "id": 1
-    },
-    {
-      "hash": "0.85548121516705855071904807118698954582214355468750",
-      "user": {
-        "id": "001",
-        "login": "anton",
-        "password": "qwerty123",
-        "registerAt": "2050-09-22",
-        "roleId": 0
-      },
-      "id": 2
-    },
-    {
-      "hash": "0.07593577159585751523707131127594038844108581542969",
-      "user": {
-        "id": "001",
-        "login": "anton",
-        "password": "qwerty123",
-        "registerAt": "2050-09-22",
-        "roleId": 0
-      },
-      "id": 3
-    },
-    {
-      "hash": "0.13456569642468907410659539891639724373817443847656",
-      "user": {
-        "id": "001",
-        "login": "anton",
-        "password": "qwerty123",
-        "registerAt": "2050-09-22",
-        "roleId": 0
-      },
-      "id": 4
-    },
-    {
-      "hash": "0.36137379695252214162337622838094830513000488281250",
-      "user": {
-        "id": "001",
-        "login": "anton",
-        "password": "qwerty123",
-        "registerAt": "2050-09-22",
-        "roleId": 0
-      },
-      "id": 5
-    }
-  ]
+  "sessions": []
 }

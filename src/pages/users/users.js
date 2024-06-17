@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Content, H2 } from '../../components';
-import { TableRow, UserRow } from './components';
+import { useSelector } from 'react-redux';
+import { selectUserRole } from '../../selectors';
 import { useServerRequest } from '../../hooks';
+import { PrivateContent, H2 } from '../../components';
+import { TableRow, UserRow } from './components';
 import { ROLE } from '../../constants';
+import { checkAccess } from '../../utils';
 import styled from 'styled-components';
 
 const UsersContainer = ({ className }) => {
@@ -11,9 +14,15 @@ const UsersContainer = ({ className }) => {
 	const [errorMessage, setErrorMessage] = useState(null);
 	const [shouldUpdateUserList, setShouldUpdateUserList] = useState(false);
 
+	const userRole = useSelector(selectUserRole);
+
 	const requestServer = useServerRequest();
 
 	useEffect(() => {
+		if (!checkAccess([ROLE.ADMIN], userRole)) {
+			return;
+		}
+
 		Promise.all([requestServer('fetchUsers'), requestServer('fetchRoles')]).then(
 			([usersRes, rolesRes]) => {
 				if (usersRes.error || rolesRes.error) {
@@ -25,17 +34,21 @@ const UsersContainer = ({ className }) => {
 				setRoles(rolesRes.res);
 			},
 		);
-	}, [requestServer, shouldUpdateUserList]);
+	}, [requestServer, shouldUpdateUserList, userRole]);
 
 	const onUserRemove = (userId) => {
+		if (!checkAccess([ROLE.ADMIN], userRole)) {
+			return;
+		}
+
 		requestServer('removeUser', userId).then(() => {
 			setShouldUpdateUserList(!shouldUpdateUserList);
 		});
 	};
 
 	return (
-		<div className={className}>
-			<Content error={errorMessage}>
+		<PrivateContent access={[ROLE.ADMIN]} serverError={errorMessage}>
+			<div className={className}>
 				<H2>Пользователи</H2>
 				<div>
 					<TableRow>
@@ -55,8 +68,8 @@ const UsersContainer = ({ className }) => {
 						/>
 					))}
 				</div>
-			</Content>
-		</div>
+			</div>
+		</PrivateContent>
 	);
 };
 
@@ -65,6 +78,5 @@ export const Users = styled(UsersContainer)`
 	flex-direction: column;
 	align-items: center;
 	margin: 0 auto;
-	font-size: 18px;
 	width: 570px;
 `;
