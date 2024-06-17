@@ -6,7 +6,9 @@ import { useServerRequest } from '../../../../hooks';
 import { Icon, Input } from '../../../../components';
 import { SpecialPanel } from '../special-panel/special-panel';
 import { sanitizeContent } from './utils/sanitize-content';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { PROP_TYPES } from '../../../../constants';
 
 const PostFormContainer = ({
 	className,
@@ -32,9 +34,9 @@ const PostFormContainer = ({
 			content: newContent,
 		};
 
-		dispatch(savePostAsync(requestServer, newPostData)).then(({ id }) =>
-			navigate(`/post/${id}`),
-		);
+		dispatch(savePostAsync(requestServer, newPostData)).then(({ id }) => {
+			navigate(`/post/${id}`);
+		});
 	};
 
 	return (
@@ -49,7 +51,7 @@ const PostFormContainer = ({
 					<Icon
 						id="fa-floppy-o"
 						size="21px"
-						margin="0 10px 0 0"
+						margin="-3px 10px 0 0"
 						onClick={onSave}
 					/>
 				}
@@ -79,3 +81,7 @@ export const PostForm = styled(PostFormContainer)`
 		white-space: pre-line;
 	}
 `;
+
+PostForm.propTypes = {
+	post: PROP_TYPES.POST,
+};
