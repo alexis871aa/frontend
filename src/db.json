@@ -18,7 +18,7 @@
       "login": "ivan",
       "password": "qwe123",
       "register_at": "2059-11-13 09:56",
-      "role_id": 1,
+      "role_id": 2,
       "id": "NvrQQTb"
     }
   ],
@@ -287,7 +287,33 @@
       "published_at": "2046-10-23 05:58",
       "content": "Мой тестовый комментарий",
       "id": 14
+    },
+    {
+      "author_id": "tTR4F3b",
+      "post_id": 3,
+      "published_at": "2058-01-26 17:09",
+      "content": "Комментарий от Алекса",
+      "id": 15
+    },
+    {
+      "author_id": "001",
+      "post_id": 1,
+      "published_at": "2043-09-02 18:04",
+      "content": "Ещё один мой комментарий",
+      "id": 16
     }
   ],
-  "sessions": []
+  "sessions": [
+    {
+      "hash": "0.43776262976883328903454639657866209745407104492188",
+      "user": {
+        "id": "001",
+        "login": "anton",
+        "password": "qwe123",
+        "registerAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": 1
+    }
+  ]
 }
