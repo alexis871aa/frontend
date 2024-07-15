@@ -6,7 +6,6 @@ import { useServerRequest } from '../../../../hooks';
 import { Icon, Input } from '../../../../components';
 import { SpecialPanel } from '../special-panel/special-panel';
 import { sanitizeContent } from './utils/sanitize-content';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { PROP_TYPES } from '../../../../constants';
 
